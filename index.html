@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indian Recipes — A Culinary Legacy</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Playfair Display for headings, Lato for body -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for social media icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- =========================================
+       HEADER & NAVIGATION
+  ========================================= -->
+  <header id="home">
+    <!-- Hamburger menu button (visible on mobile) -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="navbar">
+      <div class="nav-logo">🍛 Indian Recipes</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#recipes" class="nav-link">Recipes</a></li>
+        <li><a href="#founders" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-badge">Est. 2024</div>
+      <h1 class="hero-title">
+        The Art of<br /><em>Indian Cooking</em>
+      </h1>
+      <p class="hero-subtitle">
+        Authentic recipes passed down through generations — spiced with love, served with soul.
+      </p>
+      <a href="#recipes" class="btn-primary">Explore Recipes</a>
+
+      <!-- Decorative spice dots -->
+      <div class="spice-dot dot1"></div>
+      <div class="spice-dot dot2"></div>
+      <div class="spice-dot dot3"></div>
+    </div>
+  </header>
+
+  <!-- =========================================
+       RECIPES SECTION
+  ========================================= -->
+  <section id="recipes" class="section recipes-section">
+    <div class="section-label">Our Kitchen</div>
+    <h2 class="section-title">Featured Recipes</h2>
+    <p class="section-subtitle">
+      A curated collection of timeless Indian dishes, each with its own story.
+    </p>
+
+    <div class="recipes-grid">
+
+      <!-- Recipe Card 1: Butter Chicken -->
+      <article class="recipe-card" data-category="Main Course">
+        <div class="card-img-wrap">
+          <!-- Placeholder image via picsum using a warm food-colored seed -->
+          <img
+            src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&q=80"
+            alt="Butter Chicken"
+            class="card-img"
+            loading="lazy"
+          />
+          <span class="card-tag">Main Course</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Butter Chicken</h3>
+          <p class="card-desc">
+            Tender chicken simmered in a velvety tomato-cream sauce with aromatic spices.
+            A Punjabi classic that conquered the world.
+          </p>
+          <div class="card-meta">
+            <span>⏱ 45 min</span>
+            <span>🌶 Medium</span>
+            <span>👨‍👩‍👧 4 servings</span>
+          </div>
+          <button class="btn-card" onclick="showRecipeModal('Butter Chicken')">View Recipe</button>
+        </div>
+      </article>
+
+      <!-- Recipe Card 2: Biryani -->
+      <article class="recipe-card" data-category="Rice">
+        <div class="card-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1563379091339-03246963d96c?w=600&q=80"
+            alt="Hyderabadi Biryani"
+            class="card-img"
+            loading="lazy"
+          />
+          <span class="card-tag">Rice</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Hyderabadi Biryani</h3>
+          <p class="card-desc">
+            Fragrant basmati rice layered with marinated meat, saffron, and fried onions —
+            slow-cooked to aromatic perfection.
+          </p>
+          <div class="card-meta">
+            <span>⏱ 90 min</span>
+            <span>🌶 Spicy</span>
+            <span>👨‍👩‍👧 6 servings</span>
+          </div>
+          <button class="btn-card" onclick="showRecipeModal('Hyderabadi Biryani')">View Recipe</button>
+        </div>
+      </article>
+
+      <!-- Recipe Card 3: Masala Dosa -->
+      <article class="recipe-card" data-category="Breakfast">
+        <div class="card-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1630383249896-424e482df921?w=600&q=80"
+            alt="Masala Dosa"
+            class="card-img"
+            loading="lazy"
+          />
+          <span class="card-tag">Breakfast</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Masala Dosa</h3>
+          <p class="card-desc">
+            Crispy fermented rice crepe filled with spiced potato filling, served with coconut chutney and sambar.
+          </p>
+          <div class="card-meta">
+            <span>⏱ 30 min</span>
+            <span>🌶 Mild</span>
+            <span>👨‍👩‍👧 2 servings</span>
+          </div>
+          <button class="btn-card" onclick="showRecipeModal('Masala Dosa')">View Recipe</button>
+        </div>
+      </article>
+
+      <!-- Recipe Card 4: Palak Paneer -->
+      <article class="recipe-card" data-category="Vegetarian">
+        <div class="card-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80"
+            alt="Palak Paneer"
+            class="card-img"
+            loading="lazy"
+          />
+          <span class="card-tag">Vegetarian</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Palak Paneer</h3>
+          <p class="card-desc">
+            Fresh cottage cheese cubes nestled in a silky, spiced spinach gravy — healthy, hearty, and utterly comforting.
+          </p>
+          <div class="card-meta">
+            <span>⏱ 35 min</span>
+            <span>🌶 Mild</span>
+            <span>👨‍👩‍👧 4 servings</span>
+          </div>
+          <button class="btn-card" onclick="showRecipeModal('Palak Paneer')">View Recipe</button>
+        </div>
+      </article>
+
+      <!-- Recipe Card 5: Gulab Jamun -->
+      <article class="recipe-card" data-category="Dessert">
+        <div class="card-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1666900440561-94dcb6865554?w=600&q=80"
+            alt="Gulab Jamun"
+            class="card-img"
+            loading="lazy"
+          />
+          <span class="card-tag">Dessert</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Gulab Jamun</h3>
+          <p class="card-desc">
+            Soft milk-solid dumplings soaked in rose-cardamom sugar syrup. India's most beloved sweet treat.
+          </p>
+          <div class="card-meta">
+            <span>⏱ 40 min</span>
+            <span>🌶 None</span>
+            <span>👨‍👩‍👧 8 servings</span>
+          </div>
+          <button class="btn-card" onclick="showRecipeModal('Gulab Jamun')">View Recipe</button>
+        </div>
+      </article>
+
+      <!-- Recipe Card 6: Chole Bhature -->
+      <article class="recipe-card" data-category="Main Course">
+        <div class="card-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1645177628172-a94c1f96e6db?w=600&q=80"
+            alt="Chole Bhature"
+            class="card-img"
+            loading="lazy"
+          />
+          <span class="card-tag">Street Food</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Chole Bhature</h3>
+          <p class="card-desc">
+            Boldly spiced chickpea curry paired with puffy deep-fried bread — Delhi's iconic street-food royalty.
+          </p>
+          <div class="card-meta">
+            <span>⏱ 60 min</span>
+            <span>🌶 Spicy</span>
+            <span>👨‍👩‍👧 4 servings</span>
+          </div>
+          <button class="btn-card" onclick="showRecipeModal('Chole Bhature')">View Recipe</button>
+        </div>
+      </article>
+
+    </div><!-- /recipes-grid -->
+  </section>
+
+  <!-- =========================================
+       FOUNDERS / ABOUT SECTION
+  ========================================= -->
+  <section id="founders" class="section founders-section">
+    <div class="section-label">The Visionaries</div>
+    <h2 class="section-title">Meet Our Founders</h2>
+    <p class="section-subtitle">
+      Passionate cooks and storytellers united by a love for India's culinary heritage.
+    </p>
+
+    <div class="founders-grid">
+
+      <!-- Founder 1 -->
+      <div class="founder-card">
+        <div class="founder-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8?w=400&q=80"
+            alt="Priya Sharma"
+            class="founder-img"
+          />
+          <div class="founder-glow"></div>
+        </div>
+        <div class="founder-info">
+          <h3 class="founder-name">Priya Sharma</h3>
+          <span class="founder-role">Co-Founder & Head Chef</span>
+          <p class="founder-desc">
+            Born in Jaipur, Priya spent 15 years in professional kitchens before channelling her grandmother's
+            recipes into this platform. She believes every dish carries a memory.
+          </p>
+          <div class="founder-socials">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Founder 2 -->
+      <div class="founder-card">
+        <div class="founder-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=400&q=80"
+            alt="Arjun Mehta"
+            class="founder-img"
+          />
+          <div class="founder-glow"></div>
+        </div>
+        <div class="founder-info">
+          <h3 class="founder-name">Arjun Mehta</h3>
+          <span class="founder-role">Co-Founder & Food Storyteller</span>
+          <p class="founder-desc">
+            A food journalist from Mumbai, Arjun has documented culinary traditions across all 28 Indian states.
+            He brings context, culture, and history to every recipe on this platform.
+          </p>
+          <div class="founder-socials">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /founders-grid -->
+  </section>
+
+  <!-- =========================================
+       CONTACT SECTION
+  ========================================= -->
+  <section id="contact" class="section contact-section">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-subtitle">Have a recipe to share? A question to ask? We'd love to hear from you.</p>
+
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>hello@indianrecipes.in</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+91 98765 43210</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>New Delhi, India</span>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrap">
+        <div class="form-row">
+          <input type="text" id="name" placeholder="Your Name" class="form-input" />
+          <input type="email" id="email" placeholder="Your Email" class="form-input" />
+        </div>
+        <input type="text" id="subject" placeholder="Subject" class="form-input full" />
+        <textarea id="message" placeholder="Your Message..." class="form-textarea" rows="5"></textarea>
+        <button class="btn-submit" onclick="handleContactSubmit()">Send Message &rarr;</button>
+        <p id="form-success" class="form-success" style="display:none;">✅ Message sent! We'll get back to you soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       FOOTER
+  ========================================= -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">🍛 Indian Recipes</div>
+        <p class="footer-tagline">Preserving culinary heritage, one recipe at a time.</p>
+      </div>
+
+      <div class="footer-links-group">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#recipes">Recipes</a></li>
+          <li><a href="#founders">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h4>Cuisines</h4>
+        <ul>
+          <li><a href="#">North Indian</a></li>
+          <li><a href="#">South Indian</a></li>
+          <li><a href="#">Street Food</a></li>
+          <li><a href="#">Desserts</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social-group">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-icon" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 Indian Recipes. Crafted with ❤️ in India.</p>
+    </div>
+  </footer>
+
+  <!-- =========================================
+       RECIPE MODAL (popup)
+  ========================================= -->
+  <div id="recipe-modal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="document.getElementById('recipe-modal').classList.remove('active')">&times;</button>
+      <h3 id="modal-title" class="modal-title"></h3>
+      <p id="modal-body" class="modal-body"></p>
+    </div>
+  </div>
+
+  <!-- Link to JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
